@@ -1,4 +1,4 @@
-﻿___INFO___
+___INFO___
 
 {
   "displayName": "Persado Convert Tracker",
@@ -167,13 +167,13 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const log = require('logToConsole');
 const callInWindow = require('callInWindow');
 const copyFromWindow = require('copyFromWindow');
+const encodeUriComponent = require('encodeUriComponent');
 var sp = copyFromWindow('persado_sp');
-log(4, sp);
-
-callInWindow('PRSD.track', sp, 'convert', {amount:data.amount});
+callInWindow('PRSD.track', sp, 'convert', { amount: encodeUriComponent(data.amount) });
 data.gtmOnSuccess();
+log(4, sp);
 
 
 ___NOTES___
 
-Created on 14/08/2019, 18:46:40
+Created on 26/08/2019, 14:37:52
