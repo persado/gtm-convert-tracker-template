@@ -1,8 +1,8 @@
 ___INFO___
 
 {
-  "displayName": "Persado Convert Tracker",
-  "description": "Persado Convert Tracker",
+  "displayName": "Persado Conversion Tracker",
+  "description": "Place the Persado Conversion Tracker on a page to measure its conversions. Always load the tracker after the Persado Generic Tracker.",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -22,12 +22,13 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
+    "help": "Define an amount variable on GTM’s data layer and then add it here to return the correct purchase amount.",
     "valueValidators": [
       {
         "type": "NON_EMPTY"
       }
     ],
-    "displayName": "amount",
+    "displayName": "Amount",
     "simpleValueType": true,
     "name": "Amount",
     "type": "TEXT"
@@ -137,34 +138,12 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
-  },
-  {
-    "instance": {
-      "key": {
-        "publicId": "logging",
-        "versionId": "1"
-      },
-      "param": [
-        {
-          "key": "environments",
-          "value": {
-            "type": 1,
-            "string": "all"
-          }
-        }
-      ]
-    },
-    "clientAnnotations": {
-      "isEditedByUser": true
-    },
-    "isRequired": true
   }
 ]
 
 
 ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 
-const log = require('logToConsole');
 const callInWindow = require('callInWindow');
 const copyFromWindow = require('copyFromWindow');
 const encodeUriComponent = require('encodeUriComponent');
@@ -174,6 +153,7 @@ data.gtmOnSuccess();
 log(4, sp);
 
 
+
 ___NOTES___
 
-Created on 26/08/2019, 14:37:52
+Created on 19/09/2019, 12:41:31
