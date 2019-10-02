@@ -159,10 +159,8 @@ const encodeUriComponent = require('encodeUriComponent');
 var sp = copyFromWindow('persado_sp');
 callInWindow('PRSD.track', sp, 'convert', { amount: encodeUriComponent(data.amount) });
 data.gtmOnSuccess();
-log(4, sp);
-
 
 
 ___NOTES___
 
-Created on 19/09/2019, 12:41:31
+Created on 02/10/2019, 11:33:45
